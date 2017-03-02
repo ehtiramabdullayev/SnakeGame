@@ -15,7 +15,8 @@ import static util.StaticDataHolder.*;
  *
  * @author Master
  */
-public class PointObj  extends JPanel{
+public class PointObj extends JPanel {
+
     private int x;
     private int y;
 
@@ -38,21 +39,35 @@ public class PointObj  extends JPanel{
     @Override
     public void update(Graphics grphcs) {
         super.update(grphcs);
+        paint(grphcs);
     }
 
     @Override
     public void paint(Graphics grphcs) {
-        super.paint(grphcs); //To change body of generated methods, choose Tools | Templates.
+       // super.paint(grphcs); //To change body of generated methods, choose Tools | Templates.
         grphcs.setColor(Color.red);
-        grphcs.drawRect(x, y,SNAKEWIDTH , SNAKEHEIGHT);
-        grphcs.setPaintMode();
+        grphcs.drawRect(x, y, SNAKEWIDTH, SNAKEHEIGHT);
+    //    grphcs.setPaintMode();
     }
-    
-    public void keyPressed (KeyEvent event){
+
+    public void keyPressed(KeyEvent event) {
         int keyCode = event.getKeyCode();
+        switch (keyCode) {
+
+            case KeyEvent.VK_RIGHT:
+                x++;
+                break;
+            case KeyEvent.VK_LEFT:
+                x--;
+                break;
+            case KeyEvent.VK_UP:
+                y--;
+                break;
+            case KeyEvent.VK_DOWN:
+                y++;
+                break;
+        }
 
     }
-    
-    
-    
+
 }
