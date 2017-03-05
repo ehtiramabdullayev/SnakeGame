@@ -10,11 +10,11 @@ package util;
  * @author Master
  */
 public class GameParams {
-    public static final int SNAKEWIDTH=10;
-    public static final int SNAKEHEIGHT=10;
-    
-        public static final int SCREENWIDTH=100;
-        public static final int SCREENHEIGHT=200;
 
+    public static final int SNAKEWIDTH = 10;
+    public static final int SNAKEHEIGHT = 10;
+
+    public static final int SCREENWIDTH = 100;
+    public static final int SCREENHEIGHT = 200;
 
 }

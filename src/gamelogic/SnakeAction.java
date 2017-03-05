@@ -16,19 +16,28 @@ import snake.SnakeWindow;
 import util.SnakeDirection;
 import static util.SnakeDirection.*;
 
-
 /**
  *
  * @author Master
  */
 public class SnakeAction implements ActionListener, KeyListener {
 
-    SnakeWindow snakeWindow = new SnakeWindow();
-    SnakeHolder holder = new SnakeHolder();
+    SnakeHolder holder;// = new SnakeHolder();
+
+    SnakeWindow snakeWindow;//= new SnakeWindow(holder);
+
+    public SnakeAction(SnakeWindow window) {
+        if (window != null) {
+            System.out.println("Not null");
+            System.out.println("not null");
+        }
+        this.snakeWindow = window;
+        this.holder = window.snakeParts;
+
+    }
 
     public void controlSnake() {
 
-        
     }
 
     @Override
@@ -54,6 +63,7 @@ public class SnakeAction implements ActionListener, KeyListener {
         boolean paused = false;
         int ticks = 0;
         SnakePointObj head =holder.getSnakeHead();
+
         snakeWindow.repaint();
         SnakeDirection direction = holder.getDirection();
         ticks++;
@@ -62,11 +72,11 @@ public class SnakeAction implements ActionListener, KeyListener {
 
         if (ticks % 2 == 0 && holder.getSnakeHead() != null && !over && !paused) {
             //time++;
-            ArrayList<SnakePointObj> snakeParts =  holder.getSnakePart();
+            ArrayList<SnakePointObj> snakeParts = holder.getSnakePart();
             snakeParts.add(new SnakePointObj(head.getX(), head.getY()));
 
             if (direction == UP) {
-                if (head.getY() - 1 >= 0 ) {
+                if (head.getY() - 1 >= 0) {
                     head = new SnakePointObj(head.getX(), head.getY());
                 } else {
                     over = true;
@@ -75,24 +85,24 @@ public class SnakeAction implements ActionListener, KeyListener {
             }
 
             if (direction == DOWN) {
-                if (head.getY() + 1 < 67 ) {
-                    head = new SnakePointObj(head.getX(), head.getY()+1);
+                if (head.getY() + 1 < 67) {
+                    head = new SnakePointObj(head.getX(), head.getY() + 1);
                 } else {
                     over = true;
                 }
             }
 
             if (direction == LEFT) {
-                if (head.getX() - 1 >= 0 ) {
-                    head = new SnakePointObj(head.getX()-1, head.getY());
+                if (head.getX() - 1 >= 0) {
+                    head = new SnakePointObj(head.getX() - 1, head.getY());
                 } else {
                     over = true;
                 }
             }
 
             if (direction == RIGHT) {
-                if (head.getX() + 1 < 80 ) {
-                    head = new SnakePointObj(head.getX()+1, head.getY());
+                if (head.getX() + 1 < 80) {
+                    head = new SnakePointObj(head.getX() + 1, head.getY());
                 } else {
                     over = true;
                 }

@@ -19,10 +19,9 @@ import static util.SnakeDirection.*;
  * @author Master
  */
 public class SnakeHolder extends JPanel{
-    private ArrayList<SnakePointObj>snakePart = new ArrayList<>();
+    private ArrayList<SnakePointObj>snakePart;
     private SnakeDirection direction;
     private SnakePointObj snakeHead;
-    private int snakeTail;
     
     public ArrayList<SnakePointObj> getSnakePart() {
         return snakePart;
@@ -33,19 +32,19 @@ public class SnakeHolder extends JPanel{
     }
     
     
-     @Override
-    public void update(Graphics grphcs) {
-        super.update(grphcs);
-        paint(grphcs);
-    }
-
-    @Override
-    public void paint(Graphics grphcs) {
-        // super.paint(grphcs); //To change body of generated methods, choose Tools | Templates.
-        grphcs.setColor(Color.red);
-     //   grphcs.drawRect(x, y, SNAKEWIDTH, SNAKEHEIGHT);
-        //    grphcs.setPaintMode();
-    }
+//     @Override
+//    public void update(Graphics grphcs) {
+//        super.update(grphcs);
+//        paint(grphcs);
+//    }
+//
+//    @Override
+//    public void paint(Graphics grphcs) {
+//        // super.paint(grphcs); //To change body of generated methods, choose Tools | Templates.
+//        grphcs.setColor(Color.red);
+//     //   grphcs.drawRect(x, y, SNAKEWIDTH, SNAKEHEIGHT);
+//        //    grphcs.setPaintMode();
+//    }
 
    
 
