@@ -21,6 +21,8 @@ import static util.SnakeDirection.*;
 public class SnakeHolder extends JPanel{
     private ArrayList<SnakePointObj>snakePart = new ArrayList<>();
     private SnakeDirection direction;
+    private SnakePointObj snakeHead;
+    private int snakeTail;
     
     public ArrayList<SnakePointObj> getSnakePart() {
         return snakePart;
@@ -84,6 +86,24 @@ public class SnakeHolder extends JPanel{
 //		}
 	}
 
+    public SnakeDirection getDirection() {
+        return direction;
+    }
 
+    public void setDirection(SnakeDirection direction) {
+        this.direction = direction;
+    }
+
+    public SnakePointObj getSnakeHead() {
+        return snakeHead;
+    }
+
+    public void setSnakeHead(SnakePointObj snakeHead) {
+        this.snakeHead = snakeHead;
+    }
+
+
+        
+        
     
 }

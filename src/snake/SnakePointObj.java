@@ -15,6 +15,16 @@ public class SnakePointObj  {
     private int x;
     private int y;
 
+    public SnakePointObj(int x, int y) {
+        this.x = x;
+        this.y = y;
+    }
+
+    public SnakePointObj() {
+    }
+    
+    
+
     public int getX() {
 
         System.out.println("X : " + x);
