@@ -9,12 +9,9 @@ package util;
  *
  * @author Master
  */
-public class StaticDataHolder {
-    public static final int SNAKEWIDTH=5;
-    public static final int SNAKEHEIGHT=5;
+public enum SnakeDirection {
+    UP,DOWN,LEFT,RIGHT;
     
-        public static final int SCREENWIDTH=100;
-        public static final int SCREENHEIGHT=200;
-
-
+    
+    
 }
